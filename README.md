@@ -22,7 +22,7 @@ There are some notable features, in the author's opinion, as follows:
 # Documentation
 -----------------------------------------------------------------------------
 
-The documentation of the application was generated using [AppleDoc](https://github.com/tomaz/appledoc) and locates at directory Help/html/index.html[View](Help/html/index.html).
+The documentation of the application was generated using [AppleDoc](https://github.com/tomaz/appledoc) and locates at directory Help/html/index.html.
 
 # Credits
 -----------------------------------------------------------------------------
