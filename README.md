@@ -1,11 +1,15 @@
 # Overview
 -----------------------------------------------------------------------------
 
-![NIBCalculator Screen](Images/NIBCalculator_Screen.gif)
-
 __NIBCalculator__ (No Interface Builder Calculator) is an iOS calculator application written in Objective-C. As the name implies, the user interface was coded programatically.
 
 The calculator employs the [Reverse Polish Notation(RPN)](https://en.wikipedia.org/wiki/Reverse_Polish_notation) algorithm to calculate operations.
+
+# Demo
+-----------------------------------------------------------------------------
+
+![NIBCalculator Screen](Images/NIBCalculator_Screen.gif)
+
 
 # Hightlighted Features
 -----------------------------------------------------------------------------
