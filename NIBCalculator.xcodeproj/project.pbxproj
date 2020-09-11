@@ -33,6 +33,7 @@
 		10ED5CB31F98A12F0079BBF7 /* NIBSelectionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED5CB21F98A12F0079BBF7 /* NIBSelectionLabel.m */; };
 		10F55D331F9BB56800564C61 /* NIBOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F55D321F9BB56800564C61 /* NIBOperator.m */; };
 		10FB11172008E201001A2967 /* Tock.aif in Resources */ = {isa = PBXBuildFile; fileRef = 10FB11162008E201001A2967 /* Tock.aif */; };
+		6961E446250BA2A1004FFF30 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6961E445250BA2A1004FFF30 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		10F55D311F9BB56800564C61 /* NIBOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBOperator.h; sourceTree = "<group>"; };
 		10F55D321F9BB56800564C61 /* NIBOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBOperator.m; sourceTree = "<group>"; };
 		10FB11162008E201001A2967 /* Tock.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tock.aif; sourceTree = "<group>"; };
+		6961E445250BA2A1004FFF30 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -197,6 +199,7 @@
 		10D9C8861F78513200B0D852 /* NIBCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				6961E445250BA2A1004FFF30 /* Launch Screen.storyboard */,
 				105986A31F790394003FB7D0 /* Constant */,
 				10572A141F7855F0008B4B2D /* Config */,
 				10572A4D1F785CE9008B4B2D /* Utility */,
@@ -355,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6961E446250BA2A1004FFF30 /* Launch Screen.storyboard in Resources */,
 				10D9C8911F78513200B0D852 /* Assets.xcassets in Resources */,
 				10FB11172008E201001A2967 /* Tock.aif in Resources */,
 			);
@@ -473,7 +477,7 @@
 			baseConfigurationReference = 10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6PY3VJJ8B;
@@ -648,7 +652,7 @@
 			baseConfigurationReference = 10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6PY3VJJ8B;
@@ -666,7 +670,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6PY3VJJ8B;
