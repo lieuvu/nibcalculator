@@ -1,0 +1,24 @@
+# This work flow happens when pushing
+name: Experiment
+
+on: push
+
+jobs:
+  test:
+    name: Test
+    runs-on: macos-latest
+    env:
+      TEST: abc
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      
+      # - name: Run unit tests
+      #   run: /Applications/Xcode_11.7.app/Contents/Developer/usr/bin/xcodebuild test -quiet -project NIBCalculator.xcodeproj -scheme NIBCalculator -sdk iphonesimulator -destination 'platform=iOS Simulator,name=iPhone 11 Pro,OS=13.7'
+
+      - name: Run script
+        run: |
+          chmod +x ./scripts/test.sh
+          ./scripts/test.sh
+          python3 scripts/test.py
+
