@@ -1,0 +1,719 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10175CBC1F9F28A600F7357F /* NIBCalculatorFunctionalOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10B316181F7E8B20008D8D64 /* NIBCalculatorFunctionalOperationsTests.m */; };
+		10175CBD1F9F53BC00F7357F /* NIBCalculatorCachedOperationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 103D3F0A1F87CAAF009509A0 /* NIBCalculatorCachedOperationTests.m */; };
+		10175CBE1F9F53BC00F7357F /* NIBCalculatorOperationsSwitchingTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F55D2F1F9B8B6000564C61 /* NIBCalculatorOperationsSwitchingTests.m */; };
+		10175CBF1F9F99FC00F7357F /* NIBCalculatorMixOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 104F44BA1F866ADD007BBFEB /* NIBCalculatorMixOperationsTests.m */; };
+		102A3A7B1FBDBBF300E19E73 /* NIBCalculatorViewController+Store.m in Sources */ = {isa = PBXBuildFile; fileRef = 102A3A7A1FBDBBF300E19E73 /* NIBCalculatorViewController+Store.m */; };
+		104BA4651F7BB05500042406 /* NIBCalculatorStack.m in Sources */ = {isa = PBXBuildFile; fileRef = 104BA4641F7BB05500042406 /* NIBCalculatorStack.m */; };
+		10572A491F785888008B4B2D /* NIBCalculatorPortraitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10572A481F785888008B4B2D /* NIBCalculatorPortraitView.m */; };
+		10572A4C1F78589D008B4B2D /* NIBCalculatorLandscapeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 10572A4B1F78589D008B4B2D /* NIBCalculatorLandscapeView.m */; };
+		10572A501F785D27008B4B2D /* NIBButtonFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 10572A4F1F785D27008B4B2D /* NIBButtonFactory.m */; };
+		105986A61F790B38003FB7D0 /* NIBViewUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 105986A51F790B38003FB7D0 /* NIBViewUtilities.m */; };
+		106DAFF01FB5E0B0002E8EB8 /* NIBCalculatorViewController+Helpers.m in Sources */ = {isa = PBXBuildFile; fileRef = 106DAFEF1FB5E0B0002E8EB8 /* NIBCalculatorViewController+Helpers.m */; };
+		106DAFF31FB605C4002E8EB8 /* NIBCalculatorViewController+Actions.m in Sources */ = {isa = PBXBuildFile; fileRef = 106DAFF21FB605C4002E8EB8 /* NIBCalculatorViewController+Actions.m */; };
+		107681D01F7D28DD0073D3CD /* NIBCalculatorMainOperationsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 107681CF1F7D28DD0073D3CD /* NIBCalculatorMainOperationsTests.m */; };
+		10D9C8891F78513200B0D852 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D9C8881F78513200B0D852 /* AppDelegate.m */; };
+		10D9C8911F78513200B0D852 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D9C8901F78513200B0D852 /* Assets.xcassets */; };
+		10D9C8971F78513200B0D852 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D9C8961F78513200B0D852 /* main.m */; };
+		10D9C8A21F78535600B0D852 /* NIBButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D9C8A11F78535600B0D852 /* NIBButton.m */; };
+		10D9C8B51F78541D00B0D852 /* NIBCalculatorBrain.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D9C8B11F78541D00B0D852 /* NIBCalculatorBrain.m */; };
+		10D9C8B61F78541D00B0D852 /* NIBConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D9C8B41F78541D00B0D852 /* NIBConstants.m */; };
+		10D9C8BA1F7854A100B0D852 /* UIView+Autolayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D9C8B91F7854A100B0D852 /* UIView+Autolayout.m */; };
+		10E6BD761F9E876C00D21D9F /* NIBCalculatorViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 10D9C8AF1F7853F900B0D852 /* NIBCalculatorViewController.m */; };
+		10E6BD771F9E8EA200D21D9F /* NIBCalculatorLocalizationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 107BBE771F7E9CE400B9C8EE /* NIBCalculatorLocalizationTests.m */; };
+		10EB9D9B1FBC4011005AA446 /* NIBCalculatorViewController+UpdateDisplay.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EB9D9A1FBC4011005AA446 /* NIBCalculatorViewController+UpdateDisplay.m */; };
+		10ED5CB31F98A12F0079BBF7 /* NIBSelectionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED5CB21F98A12F0079BBF7 /* NIBSelectionLabel.m */; };
+		10F55D331F9BB56800564C61 /* NIBOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F55D321F9BB56800564C61 /* NIBOperator.m */; };
+		10FB11172008E201001A2967 /* Tock.aif in Resources */ = {isa = PBXBuildFile; fileRef = 10FB11162008E201001A2967 /* Tock.aif */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1062ED3C1F840C41009D261F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10D9C87C1F78513200B0D852 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10D9C8831F78513200B0D852;
+			remoteInfo = NIBCalculator;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		102A3A791FBDBBF300E19E73 /* NIBCalculatorViewController+Store.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NIBCalculatorViewController+Store.h"; sourceTree = "<group>"; };
+		102A3A7A1FBDBBF300E19E73 /* NIBCalculatorViewController+Store.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NIBCalculatorViewController+Store.m"; sourceTree = "<group>"; };
+		103D3F0A1F87CAAF009509A0 /* NIBCalculatorCachedOperationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorCachedOperationTests.m; sourceTree = "<group>"; };
+		104BA4631F7BB05500042406 /* NIBCalculatorStack.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBCalculatorStack.h; sourceTree = "<group>"; };
+		104BA4641F7BB05500042406 /* NIBCalculatorStack.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorStack.m; sourceTree = "<group>"; };
+		104F44BA1F866ADD007BBFEB /* NIBCalculatorMixOperationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorMixOperationsTests.m; sourceTree = "<group>"; };
+		10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = XcodeWarnings_9.0.xcconfig; sourceTree = "<group>"; };
+		10572A471F785888008B4B2D /* NIBCalculatorPortraitView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBCalculatorPortraitView.h; sourceTree = "<group>"; };
+		10572A481F785888008B4B2D /* NIBCalculatorPortraitView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorPortraitView.m; sourceTree = "<group>"; };
+		10572A4A1F78589D008B4B2D /* NIBCalculatorLandscapeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBCalculatorLandscapeView.h; sourceTree = "<group>"; };
+		10572A4B1F78589D008B4B2D /* NIBCalculatorLandscapeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorLandscapeView.m; sourceTree = "<group>"; };
+		10572A4E1F785D27008B4B2D /* NIBButtonFactory.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBButtonFactory.h; sourceTree = "<group>"; };
+		10572A4F1F785D27008B4B2D /* NIBButtonFactory.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBButtonFactory.m; sourceTree = "<group>"; };
+		105986A41F790B38003FB7D0 /* NIBViewUtilities.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBViewUtilities.h; sourceTree = "<group>"; };
+		105986A51F790B38003FB7D0 /* NIBViewUtilities.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBViewUtilities.m; sourceTree = "<group>"; };
+		106DAFEE1FB5E0B0002E8EB8 /* NIBCalculatorViewController+Helpers.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NIBCalculatorViewController+Helpers.h"; sourceTree = "<group>"; };
+		106DAFEF1FB5E0B0002E8EB8 /* NIBCalculatorViewController+Helpers.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NIBCalculatorViewController+Helpers.m"; sourceTree = "<group>"; };
+		106DAFF11FB605C4002E8EB8 /* NIBCalculatorViewController+Actions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NIBCalculatorViewController+Actions.h"; sourceTree = "<group>"; };
+		106DAFF21FB605C4002E8EB8 /* NIBCalculatorViewController+Actions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NIBCalculatorViewController+Actions.m"; sourceTree = "<group>"; };
+		107681CD1F7D28DD0073D3CD /* NIBCalculatorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NIBCalculatorTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		107681CF1F7D28DD0073D3CD /* NIBCalculatorMainOperationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorMainOperationsTests.m; sourceTree = "<group>"; };
+		107681D11F7D28DD0073D3CD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		107BBE771F7E9CE400B9C8EE /* NIBCalculatorLocalizationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorLocalizationTests.m; sourceTree = "<group>"; };
+		10AE5E381F797553009825C0 /* NIBCalculatorViewProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBCalculatorViewProtocol.h; sourceTree = "<group>"; };
+		10B316181F7E8B20008D8D64 /* NIBCalculatorFunctionalOperationsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorFunctionalOperationsTests.m; sourceTree = "<group>"; };
+		10D9C8841F78513200B0D852 /* NIBCalculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIBCalculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10D9C8871F78513200B0D852 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		10D9C8881F78513200B0D852 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		10D9C8901F78513200B0D852 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10D9C8951F78513200B0D852 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		10D9C8961F78513200B0D852 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		10D9C8A11F78535600B0D852 /* NIBButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIBButton.m; sourceTree = "<group>"; };
+		10D9C8AE1F7853F900B0D852 /* NIBCalculatorViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIBCalculatorViewController.h; sourceTree = "<group>"; };
+		10D9C8AF1F7853F900B0D852 /* NIBCalculatorViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorViewController.m; sourceTree = "<group>"; };
+		10D9C8B11F78541D00B0D852 /* NIBCalculatorBrain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorBrain.m; sourceTree = "<group>"; };
+		10D9C8B21F78541D00B0D852 /* NIBCalculatorBrain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIBCalculatorBrain.h; sourceTree = "<group>"; };
+		10D9C8B31F78541D00B0D852 /* NIBConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIBConstants.h; sourceTree = "<group>"; };
+		10D9C8B41F78541D00B0D852 /* NIBConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NIBConstants.m; sourceTree = "<group>"; };
+		10D9C8B71F78544C00B0D852 /* NIBButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NIBButton.h; sourceTree = "<group>"; };
+		10D9C8B81F7854A100B0D852 /* UIView+Autolayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Autolayout.h"; sourceTree = "<group>"; };
+		10D9C8B91F7854A100B0D852 /* UIView+Autolayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Autolayout.m"; sourceTree = "<group>"; };
+		10EB9D991FBC4011005AA446 /* NIBCalculatorViewController+UpdateDisplay.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NIBCalculatorViewController+UpdateDisplay.h"; sourceTree = "<group>"; };
+		10EB9D9A1FBC4011005AA446 /* NIBCalculatorViewController+UpdateDisplay.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NIBCalculatorViewController+UpdateDisplay.m"; sourceTree = "<group>"; };
+		10ED5CB11F98A12F0079BBF7 /* NIBSelectionLabel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBSelectionLabel.h; sourceTree = "<group>"; };
+		10ED5CB21F98A12F0079BBF7 /* NIBSelectionLabel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBSelectionLabel.m; sourceTree = "<group>"; };
+		10F55D2F1F9B8B6000564C61 /* NIBCalculatorOperationsSwitchingTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBCalculatorOperationsSwitchingTests.m; sourceTree = "<group>"; };
+		10F55D311F9BB56800564C61 /* NIBOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBOperator.h; sourceTree = "<group>"; };
+		10F55D321F9BB56800564C61 /* NIBOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBOperator.m; sourceTree = "<group>"; };
+		10FB11162008E201001A2967 /* Tock.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tock.aif; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		107681CA1F7D28DD0073D3CD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10D9C8811F78513200B0D852 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10572A141F7855F0008B4B2D /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		10572A461F785716008B4B2D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				10D9C8951F78513200B0D852 /* Info.plist */,
+				10D9C8961F78513200B0D852 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10572A4D1F785CE9008B4B2D /* Utility */ = {
+			isa = PBXGroup;
+			children = (
+				10572A4E1F785D27008B4B2D /* NIBButtonFactory.h */,
+				10572A4F1F785D27008B4B2D /* NIBButtonFactory.m */,
+				105986A41F790B38003FB7D0 /* NIBViewUtilities.h */,
+				105986A51F790B38003FB7D0 /* NIBViewUtilities.m */,
+				10D9C8B81F7854A100B0D852 /* UIView+Autolayout.h */,
+				10D9C8B91F7854A100B0D852 /* UIView+Autolayout.m */,
+			);
+			path = Utility;
+			sourceTree = "<group>";
+		};
+		105986A31F790394003FB7D0 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				10D9C8B31F78541D00B0D852 /* NIBConstants.h */,
+				10D9C8B41F78541D00B0D852 /* NIBConstants.m */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
+		107681CE1F7D28DD0073D3CD /* NIBCalculatorTests */ = {
+			isa = PBXGroup;
+			children = (
+				103D3F0A1F87CAAF009509A0 /* NIBCalculatorCachedOperationTests.m */,
+				10B316181F7E8B20008D8D64 /* NIBCalculatorFunctionalOperationsTests.m */,
+				107BBE771F7E9CE400B9C8EE /* NIBCalculatorLocalizationTests.m */,
+				107681CF1F7D28DD0073D3CD /* NIBCalculatorMainOperationsTests.m */,
+				104F44BA1F866ADD007BBFEB /* NIBCalculatorMixOperationsTests.m */,
+				10F55D2F1F9B8B6000564C61 /* NIBCalculatorOperationsSwitchingTests.m */,
+				107681D11F7D28DD0073D3CD /* Info.plist */,
+			);
+			path = NIBCalculatorTests;
+			sourceTree = "<group>";
+		};
+		10AE5E371F7974D4009825C0 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				10AE5E381F797553009825C0 /* NIBCalculatorViewProtocol.h */,
+			);
+			name = Protocols;
+			sourceTree = "<group>";
+		};
+		10D9C87B1F78513200B0D852 = {
+			isa = PBXGroup;
+			children = (
+				10D9C8861F78513200B0D852 /* NIBCalculator */,
+				107681CE1F7D28DD0073D3CD /* NIBCalculatorTests */,
+				10D9C8851F78513200B0D852 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		10D9C8851F78513200B0D852 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10D9C8841F78513200B0D852 /* NIBCalculator.app */,
+				107681CD1F7D28DD0073D3CD /* NIBCalculatorTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10D9C8861F78513200B0D852 /* NIBCalculator */ = {
+			isa = PBXGroup;
+			children = (
+				105986A31F790394003FB7D0 /* Constant */,
+				10572A141F7855F0008B4B2D /* Config */,
+				10572A4D1F785CE9008B4B2D /* Utility */,
+				10D9C89D1F78520100B0D852 /* Model */,
+				10D9C89E1F78524D00B0D852 /* View */,
+				10D9C89F1F78525200B0D852 /* Controller */,
+				10FB11152008E201001A2967 /* Resources */,
+				10572A461F785716008B4B2D /* Supporting Files */,
+				10D9C8901F78513200B0D852 /* Assets.xcassets */,
+			);
+			path = NIBCalculator;
+			sourceTree = "<group>";
+		};
+		10D9C89D1F78520100B0D852 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				10D9C8B21F78541D00B0D852 /* NIBCalculatorBrain.h */,
+				10D9C8B11F78541D00B0D852 /* NIBCalculatorBrain.m */,
+				104BA4631F7BB05500042406 /* NIBCalculatorStack.h */,
+				104BA4641F7BB05500042406 /* NIBCalculatorStack.m */,
+				10F55D311F9BB56800564C61 /* NIBOperator.h */,
+				10F55D321F9BB56800564C61 /* NIBOperator.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		10D9C89E1F78524D00B0D852 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				10D9C8B71F78544C00B0D852 /* NIBButton.h */,
+				10D9C8A11F78535600B0D852 /* NIBButton.m */,
+				10572A4A1F78589D008B4B2D /* NIBCalculatorLandscapeView.h */,
+				10572A4B1F78589D008B4B2D /* NIBCalculatorLandscapeView.m */,
+				10572A471F785888008B4B2D /* NIBCalculatorPortraitView.h */,
+				10572A481F785888008B4B2D /* NIBCalculatorPortraitView.m */,
+				10ED5CB11F98A12F0079BBF7 /* NIBSelectionLabel.h */,
+				10ED5CB21F98A12F0079BBF7 /* NIBSelectionLabel.m */,
+				10AE5E371F7974D4009825C0 /* Protocols */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		10D9C89F1F78525200B0D852 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				10D9C8871F78513200B0D852 /* AppDelegate.h */,
+				10D9C8881F78513200B0D852 /* AppDelegate.m */,
+				10D9C8AE1F7853F900B0D852 /* NIBCalculatorViewController.h */,
+				10D9C8AF1F7853F900B0D852 /* NIBCalculatorViewController.m */,
+				106DAFEE1FB5E0B0002E8EB8 /* NIBCalculatorViewController+Helpers.h */,
+				106DAFEF1FB5E0B0002E8EB8 /* NIBCalculatorViewController+Helpers.m */,
+				106DAFF11FB605C4002E8EB8 /* NIBCalculatorViewController+Actions.h */,
+				106DAFF21FB605C4002E8EB8 /* NIBCalculatorViewController+Actions.m */,
+				10EB9D991FBC4011005AA446 /* NIBCalculatorViewController+UpdateDisplay.h */,
+				10EB9D9A1FBC4011005AA446 /* NIBCalculatorViewController+UpdateDisplay.m */,
+				102A3A791FBDBBF300E19E73 /* NIBCalculatorViewController+Store.h */,
+				102A3A7A1FBDBBF300E19E73 /* NIBCalculatorViewController+Store.m */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		10FB11152008E201001A2967 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				10FB11162008E201001A2967 /* Tock.aif */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		107681CC1F7D28DD0073D3CD /* NIBCalculatorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 107681D41F7D28DD0073D3CD /* Build configuration list for PBXNativeTarget "NIBCalculatorTests" */;
+			buildPhases = (
+				107681C91F7D28DD0073D3CD /* Sources */,
+				107681CA1F7D28DD0073D3CD /* Frameworks */,
+				107681CB1F7D28DD0073D3CD /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1062ED3D1F840C41009D261F /* PBXTargetDependency */,
+			);
+			name = NIBCalculatorTests;
+			productName = NIBCalculatorTests;
+			productReference = 107681CD1F7D28DD0073D3CD /* NIBCalculatorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		10D9C8831F78513200B0D852 /* NIBCalculator */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10D9C89A1F78513200B0D852 /* Build configuration list for PBXNativeTarget "NIBCalculator" */;
+			buildPhases = (
+				10D9C8801F78513200B0D852 /* Sources */,
+				10D9C8811F78513200B0D852 /* Frameworks */,
+				10D9C8821F78513200B0D852 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NIBCalculator;
+			productName = NIBCalculator;
+			productReference = 10D9C8841F78513200B0D852 /* NIBCalculator.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10D9C87C1F78513200B0D852 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = "Lieu Vu";
+				TargetAttributes = {
+					107681CC1F7D28DD0073D3CD = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Manual;
+						TestTargetID = 10D9C8831F78513200B0D852;
+					};
+					10D9C8831F78513200B0D852 = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 10D9C87F1F78513200B0D852 /* Build configuration list for PBXProject "NIBCalculator" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10D9C87B1F78513200B0D852;
+			productRefGroup = 10D9C8851F78513200B0D852 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10D9C8831F78513200B0D852 /* NIBCalculator */,
+				107681CC1F7D28DD0073D3CD /* NIBCalculatorTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		107681CB1F7D28DD0073D3CD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10D9C8821F78513200B0D852 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10D9C8911F78513200B0D852 /* Assets.xcassets in Resources */,
+				10FB11172008E201001A2967 /* Tock.aif in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		107681C91F7D28DD0073D3CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10175CBF1F9F99FC00F7357F /* NIBCalculatorMixOperationsTests.m in Sources */,
+				10175CBD1F9F53BC00F7357F /* NIBCalculatorCachedOperationTests.m in Sources */,
+				10175CBE1F9F53BC00F7357F /* NIBCalculatorOperationsSwitchingTests.m in Sources */,
+				10175CBC1F9F28A600F7357F /* NIBCalculatorFunctionalOperationsTests.m in Sources */,
+				10E6BD771F9E8EA200D21D9F /* NIBCalculatorLocalizationTests.m in Sources */,
+				107681D01F7D28DD0073D3CD /* NIBCalculatorMainOperationsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10D9C8801F78513200B0D852 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10E6BD761F9E876C00D21D9F /* NIBCalculatorViewController.m in Sources */,
+				105986A61F790B38003FB7D0 /* NIBViewUtilities.m in Sources */,
+				10572A501F785D27008B4B2D /* NIBButtonFactory.m in Sources */,
+				10572A491F785888008B4B2D /* NIBCalculatorPortraitView.m in Sources */,
+				10EB9D9B1FBC4011005AA446 /* NIBCalculatorViewController+UpdateDisplay.m in Sources */,
+				10D9C8971F78513200B0D852 /* main.m in Sources */,
+				104BA4651F7BB05500042406 /* NIBCalculatorStack.m in Sources */,
+				10ED5CB31F98A12F0079BBF7 /* NIBSelectionLabel.m in Sources */,
+				102A3A7B1FBDBBF300E19E73 /* NIBCalculatorViewController+Store.m in Sources */,
+				10D9C8B51F78541D00B0D852 /* NIBCalculatorBrain.m in Sources */,
+				10572A4C1F78589D008B4B2D /* NIBCalculatorLandscapeView.m in Sources */,
+				106DAFF01FB5E0B0002E8EB8 /* NIBCalculatorViewController+Helpers.m in Sources */,
+				10F55D331F9BB56800564C61 /* NIBOperator.m in Sources */,
+				10D9C8891F78513200B0D852 /* AppDelegate.m in Sources */,
+				10D9C8BA1F7854A100B0D852 /* UIView+Autolayout.m in Sources */,
+				10D9C8A21F78535600B0D852 /* NIBButton.m in Sources */,
+				106DAFF31FB605C4002E8EB8 /* NIBCalculatorViewController+Actions.m in Sources */,
+				10D9C8B61F78541D00B0D852 /* NIBConstants.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1062ED3D1F840C41009D261F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10D9C8831F78513200B0D852 /* NIBCalculator */;
+			targetProxy = 1062ED3C1F840C41009D261F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		1062ED2C1F83FFE0009D261F /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Test;
+		};
+		1062ED2D1F83FFE0009D261F /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6PY3VJJ8B;
+				INFOPLIST_FILE = NIBCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lieuvu.NIBCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Test;
+		};
+		1062ED2E1F83FFE0009D261F /* Test */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = NIBCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LV.NIBCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NIBCalculator.app/NIBCalculator";
+			};
+			name = Test;
+		};
+		107681D51F7D28DD0073D3CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = NIBCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LV.NIBCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NIBCalculator.app/NIBCalculator";
+			};
+			name = Debug;
+		};
+		107681D61F7D28DD0073D3CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = NIBCalculatorTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = LV.NIBCalculatorTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NIBCalculator.app/NIBCalculator";
+			};
+			name = Release;
+		};
+		10D9C8981F78513200B0D852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		10D9C8991F78513200B0D852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10D9C89B1F78513200B0D852 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6PY3VJJ8B;
+				INFOPLIST_FILE = NIBCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lieuvu.NIBCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		10D9C89C1F78513200B0D852 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Z6PY3VJJ8B;
+				INFOPLIST_FILE = NIBCalculator/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lieuvu.NIBCalculator;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		107681D41F7D28DD0073D3CD /* Build configuration list for PBXNativeTarget "NIBCalculatorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				107681D51F7D28DD0073D3CD /* Debug */,
+				1062ED2E1F83FFE0009D261F /* Test */,
+				107681D61F7D28DD0073D3CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10D9C87F1F78513200B0D852 /* Build configuration list for PBXProject "NIBCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10D9C8981F78513200B0D852 /* Debug */,
+				1062ED2C1F83FFE0009D261F /* Test */,
+				10D9C8991F78513200B0D852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10D9C89A1F78513200B0D852 /* Build configuration list for PBXNativeTarget "NIBCalculator" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10D9C89B1F78513200B0D852 /* Debug */,
+				1062ED2D1F83FFE0009D261F /* Test */,
+				10D9C89C1F78513200B0D852 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 10D9C87C1F78513200B0D852 /* Project object */;
+}

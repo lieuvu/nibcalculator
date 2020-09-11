@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+
+	<title>NIBCalculatorViewController(Helpers) Category Reference</title>
+
+	<link rel="stylesheet" href="../css/style.css">
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1.4">
+	<meta name="generator" content="appledoc 2.2.1 (build 1333)">
+</head>
+<body class="appledoc">
+	<header>
+		<div class="container" class="hide-in-xcode">
+			
+			<h1 id="library-title">
+				<a href="../index.html">NIBCalculator </a>
+			</h1>
+
+			<p id="developer-home">
+				<a href="../index.html">LieuVu</a>
+			</p>
+			
+		</div>
+	</header>
+
+	<aside>
+		<div class="container">
+			<nav>
+				<ul id="header-buttons" role="toolbar">
+					<li><a href="../index.html">Index</a></li>
+<li><a href="../hierarchy.html">Hierarchy</a></li>
+
+					<li id="on-this-page" role="navigation">
+						<label>
+							On This Page
+
+							<div class="chevron">
+								<div class="chevy chevron-left"></div>
+								<div class="chevy chevron-right"></div>
+							</div>
+
+							<select id="jump-to">
+	<option value="top">Jump To&#133;</option>
+	
+	<option value="overview">Overview</option>
+	
+
+	
+	
+	<option value="tasks">Tasks</option>
+	
+	
+
+	
+	
+
+	
+
+	
+	<optgroup label="Instance Methods">
+		
+		<option value="//api/name/addToButtonsWithTags:fromButtons:action:forControlEvent:">- addToButtonsWithTags:fromButtons:action:forControlEvent:</option>
+		
+		<option value="//api/name/digitsOfString:">- digitsOfString:</option>
+		
+		<option value="//api/name/stringFromString:withRevmovalOptions:">- stringFromString:withRevmovalOptions:</option>
+		
+		<option value="//api/name/toggleArithmeticClearButtonOrClearButton">- toggleArithmeticClearButtonOrClearButton</option>
+		
+	</optgroup>
+	
+	
+</select>
+						</label>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+
+	<article>
+		<div id="overview_contents" class="container">
+			<div id="content">
+				<main role="main">
+					<h1 class="title">NIBCalculatorViewController(Helpers) Category Reference</h1>
+
+					
+					<div class="section section-specification"><table cellspacing="0"><tbody>
+						<tr>
+	<th>Declared in</th>
+	<td>NIBCalculatorViewController+Helpers.h</td>
+</tr>
+						</tbody></table></div>
+					
+
+                    
+					
+					<div class="section section-overview">
+						<a title="Overview" name="overview"></a>
+						<h2 class="subtitle subtitle-overview">Overview</h2>
+						<p><code>NIBCalculatorViewController+Helper</code> is a category that defines helper methods
+for the main controller.</p>
+					</div>
+					
+					
+
+					
+					
+					<div class="section section-tasks">
+						<a title="Tasks" name="tasks"></a>
+						
+
+						<a title="Helpers" name="task_Helpers"></a>
+						
+<h2 class="task-title">Helpers</h2>
+						<div class="task-list">
+							<div class="section-method">
+	<a name="//api/name/digitsOfString:" title="digitsOfString:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/digitsOfString:">&ndash;&nbsp;digitsOfString:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Count the number of digits of a string including exponent symbol.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSUInteger)digitsOfString:(NSString *)<em>numStr</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>numStr</code></th>
+						<td><p>The number string to count the number of digits.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the number of digits in the string.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Count the number of digits of a string including exponent symbol.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NIBCalculatorViewController+Helpers.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/stringFromString:withRevmovalOptions:" title="stringFromString:withRevmovalOptions:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/stringFromString:withRevmovalOptions:">&ndash;&nbsp;stringFromString:withRevmovalOptions:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Form a string by removing a symbol or symbols according to bitmask of option
+<a href="../Constants/NIBSymbolRemovalOptions.html">NIBSymbolRemovalOptions</a></p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (NSString *)stringFromString:(NSString *)<em>numStr</em> withRevmovalOptions:(NIBSymbolRemovalOptions)<em>opts</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>numStr</code></th>
+						<td><p>The number string to manipulate.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>opts</code></th>
+						<td><p>The bitmask option of <a href="../Constants/NIBSymbolRemovalOptions.html">NIBSymbolRemovalOptions</a>.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+			<div class="method-subsection return">
+				<h4 class="method-subtitle parameter-title">Return Value</h4>
+				<p>Returns the string after removal.</p>
+			</div>
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Form a string by removing a symbol or symbols according to bitmask of option
+<a href="../Constants/NIBSymbolRemovalOptions.html">NIBSymbolRemovalOptions</a></p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NIBCalculatorViewController+Helpers.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/toggleArithmeticClearButtonOrClearButton" title="toggleArithmeticClearButtonOrClearButton"></a>
+	<h3 class="method-title"><code><a href="#//api/name/toggleArithmeticClearButtonOrClearButton">&ndash;&nbsp;toggleArithmeticClearButtonOrClearButton</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>Switch between arithmetic clear button
+and clear button.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)toggleArithmeticClearButtonOrClearButton</code></div>
+
+		    
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>Switch between arithmetic clear button
+and clear button.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NIBCalculatorViewController+Helpers.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div><div class="section-method">
+	<a name="//api/name/addToButtonsWithTags:fromButtons:action:forControlEvent:" title="addToButtonsWithTags:fromButtons:action:forControlEvent:"></a>
+	<h3 class="method-title"><code><a href="#//api/name/addToButtonsWithTags:fromButtons:action:forControlEvent:">&ndash;&nbsp;addToButtonsWithTags:fromButtons:action:forControlEvent:</a></code>
+</h3>
+
+	<div class="method-info">
+		<div class="pointy-thing"></div>
+
+		<div class="method-info-container">
+			
+			
+			<div class="method-subsection brief-description">
+				<p>A utility function to help action to a group of buttons
+from a buttons collection using their tags as a reference.</p>
+			</div>
+			
+		    
+
+			<div class="method-subsection method-declaration"><code>- (void)addToButtonsWithTags:(NSArray&lt;NSNumber*&gt; *)<em>tags</em> fromButtons:(NSArray&lt;NIBButton*&gt; *)<em>buttons</em> action:(SEL)<em>action</em> forControlEvent:(UIControlEvents)<em>controlEvents</em></code></div>
+
+		    
+			
+			<div class="method-subsection arguments-section parameters">
+				<h4 class="method-subtitle parameter-title">Parameters</h4>
+				<table class="argument-def parameter-def">
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>tags</code></th>
+						<td><p>The array of button tags.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>buttons</code></th>
+						<td><p>The buttons collection.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>action</code></th>
+						<td><p>The action to add.</p></td>
+					</tr>
+				
+					<tr>
+						<th scope="row" class="argument-name"><code>controlEvents</code></th>
+						<td><p>The bitmask of control events.</p></td>
+					</tr>
+				
+				</table>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection discussion-section">
+				<h4 class="method-subtitle">Discussion</h4>
+				<p>A utility function to help action to a group of buttons
+from a buttons collection using their tags as a reference.</p>
+			</div>
+			
+
+			
+
+			
+
+			
+			<div class="method-subsection declared-in-section">
+				<h4 class="method-subtitle">Declared In</h4>
+				<p><code class="declared-in-ref">NIBCalculatorViewController+Helpers.h</code></p>
+			</div>
+			
+			
+		</div>
+	</div>
+</div>
+						</div>
+						
+					</div>
+					
+					
+
+                    
+                    
+          
+				</main>
+
+				<footer>
+					<div class="footer-copyright">
+						
+						<p class="copyright">Copyright &copy; 2018 LieuVu. All rights reserved. Updated: 2018-01-16</p>
+						
+						
+						<p class="generator">Generated by <a href="http://appledoc.gentlebytes.com">appledoc 2.2.1 (build 1333)</a>.</p>
+						
+					</div>
+				</footer>
+			</div>
+		</div>
+	</article>
+
+	<script src="../js/script.js"></script>
+</body>
+</html>
