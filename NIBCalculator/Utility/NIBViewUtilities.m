@@ -80,8 +80,10 @@ const CGFloat NIBDisplayMainLabelMaxFontSize = 100.0f;
     for (NSUInteger i = 0; i < row.arrangedSubviews.count; i++) {
         [reference enumerateKeysAndObjectsUsingBlock:^(NSNumber *firstGroupBtnTag, NSNumber *secondGroupBtnTag, BOOL *stop) {
             if (row.arrangedSubviews[i].tag == firstGroupBtnTag.integerValue) {
-                NIBButton *firstGroupBtn = [self buttonWithTag:firstGroupBtnTag.integerValue fromButtons:row.arrangedSubviews];
-                NIBButton *secondGroupBtn = [self buttonWithTag:secondGroupBtnTag.integerValue fromButtons:row.arrangedSubviews];
+                NIBButton *firstGroupBtn = [self buttonWithTag:firstGroupBtnTag.integerValue
+                                                   fromButtons:row.arrangedSubviews];
+                NIBButton *secondGroupBtn = [self buttonWithTag:secondGroupBtnTag.integerValue
+                                                    fromButtons:row.arrangedSubviews];
                 firstGroupBtn.hidden = !firstGroupBtn.hidden;
                 secondGroupBtn.hidden = !secondGroupBtn.hidden;
                 *stop = YES;

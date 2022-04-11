@@ -259,20 +259,10 @@ NS_ASSUME_NONNULL_END
 
 - (void)layoutCalculatorView:(UIView<NIBCalculatorViewProtocol> *)calculatorView
 {
-    /* iOS 11 and later */
-    if (@available(iOS 11, *)) {
-        [[self.view.safeAreaLayoutGuide.leadingAnchor constraintEqualToAnchor:calculatorView.leadingAnchor] setActive:YES];
-        [[self.view.safeAreaLayoutGuide.bottomAnchor constraintEqualToAnchor:calculatorView.bottomAnchor] setActive:YES];
-        [[self.view.safeAreaLayoutGuide.trailingAnchor constraintEqualToAnchor:calculatorView.trailingAnchor] setActive:YES];
-        [[self.view.safeAreaLayoutGuide.topAnchor constraintEqualToAnchor:calculatorView.topAnchor] setActive:YES];
-        
-    /* iOS ealier than 11 */
-    } else {
-        [[self.view.leadingAnchor constraintEqualToAnchor:calculatorView.leadingAnchor] setActive:YES];
-        [[self.topLayoutGuide.bottomAnchor constraintEqualToAnchor:calculatorView.topAnchor] setActive:YES];
-        [[self.view.bottomAnchor constraintEqualToAnchor:calculatorView.bottomAnchor] setActive:YES];
-        [[self.view.trailingAnchor constraintEqualToAnchor:calculatorView.trailingAnchor] setActive:YES];
-    }
+  [[self.view.safeAreaLayoutGuide.leadingAnchor constraintEqualToAnchor:calculatorView.leadingAnchor] setActive:YES];
+  [[self.view.safeAreaLayoutGuide.bottomAnchor constraintEqualToAnchor:calculatorView.bottomAnchor] setActive:YES];
+  [[self.view.safeAreaLayoutGuide.trailingAnchor constraintEqualToAnchor:calculatorView.trailingAnchor] setActive:YES];
+  [[self.view.safeAreaLayoutGuide.topAnchor constraintEqualToAnchor:calculatorView.topAnchor] setActive:YES];
 }
 
 
@@ -300,22 +290,26 @@ NS_ASSUME_NONNULL_END
         [calculatorView.mainDisplay setUserInteractionEnabled:YES];
 
         /* add swipe right action - swipeRightMainDisplay */
-        UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(swipeRightMainDisplay)];
+        UISwipeGestureRecognizer *swipeRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                         action:@selector(swipeRightMainDisplay)];
         swipeRight.direction = UISwipeGestureRecognizerDirectionRight;
         swipeRight.numberOfTouchesRequired = 1;
         [calculatorView.mainDisplay addGestureRecognizer:swipeRight];
 
         /* add long press action - selectMainDisplay */
-        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(selectMainDisplay:)];
+        UILongPressGestureRecognizer *longPress = [[UILongPressGestureRecognizer alloc] initWithTarget:self
+                                                                                                action:@selector(selectMainDisplay:)];
         [calculatorView.mainDisplay addGestureRecognizer:longPress];
 
         /* add double tap action - selectMainDisplay */
-        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(selectMainDisplay:)];
+        UITapGestureRecognizer *doubleTap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                                    action:@selector(selectMainDisplay:)];
         doubleTap.numberOfTapsRequired = 2;
         [calculatorView.mainDisplay addGestureRecognizer:doubleTap];
 
         /* add tap action - deselectMainDisplay */
-        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(deselectMainDisplay)];
+        UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self
+                                                                              action:@selector(deselectMainDisplay)];
         [tap requireGestureRecognizerToFail:doubleTap];
         [calculatorView.mainDisplay addGestureRecognizer:tap];
     }
@@ -328,19 +322,25 @@ NS_ASSUME_NONNULL_END
     /* add action for arithmetic clear button */
     for (NSArray *buttons in buttonsGroup) {
         NIBButton *arithmeticClearBtn = [NIBViewUtilities buttonWithTag:NIBButtonArithmeticClear fromButtons:buttons];
-        [arithmeticClearBtn addTarget:self action:@selector(clearArithmeticOperations) forControlEvents:UIControlEventTouchUpInside];
+        [arithmeticClearBtn addTarget:self
+                               action:@selector(clearArithmeticOperations)
+                     forControlEvents:UIControlEventTouchUpInside];
     }
 
     /* add action to clear button */
     for (NSArray *buttons in buttonsGroup) {
         NIBButton *clearBtn = [NIBViewUtilities buttonWithTag:NIBButtonClear fromButtons:buttons];
-        [clearBtn addTarget:self action:@selector(clearMainDisplays) forControlEvents:UIControlEventTouchUpInside];
+        [clearBtn addTarget:self
+                     action:@selector(clearMainDisplays)
+           forControlEvents:UIControlEventTouchUpInside];
     }
 
     /* add action to sign toggle operation */
     for (NSArray *buttons in buttonsGroup) {
         NIBButton *signToggleBtn = [NIBViewUtilities buttonWithTag:NIBButtonSignToggle fromButtons:buttons];
-        [signToggleBtn addTarget:self action:@selector(toggleNegativePrefix) forControlEvents:UIControlEventTouchUpInside];
+        [signToggleBtn addTarget:self
+                          action:@selector(toggleNegativePrefix)
+                forControlEvents:UIControlEventTouchUpInside];
     }
 
     /* add action to digits and decimal separator buttons */
@@ -357,13 +357,17 @@ NS_ASSUME_NONNULL_END
                                              @(NIBButtonDecimalSeparator) ];
 
     for (NSArray *buttons in buttonsGroup) {
-        [self addToButtonsWithTags:digitsAndDecimalButtonTags fromButtons:buttons action:@selector(pressDigitAndDecimalSeparator:) forControlEvent:UIControlEventTouchUpInside];
+        [self addToButtonsWithTags:digitsAndDecimalButtonTags
+                       fromButtons:buttons action:@selector(pressDigitAndDecimalSeparator:)
+                   forControlEvent:UIControlEventTouchUpInside];
     }
 
     /* add action to common unary operation */
     for (NSArray *buttons in buttonsGroup) {
         NIBButton *percentageBtn = [NIBViewUtilities buttonWithTag:NIBButtonPercentage fromButtons:buttons];
-        [percentageBtn addTarget:self action:@selector(performUnaryOperation:) forControlEvents:UIControlEventTouchUpInside];
+        [percentageBtn addTarget:self
+                          action:@selector(performUnaryOperation:)
+                forControlEvents:UIControlEventTouchUpInside];
     }
 
     /* add action to common binary operation */
@@ -379,7 +383,9 @@ NS_ASSUME_NONNULL_END
     /* add action to equality operation */
     for (NSArray *buttons in buttonsGroup) {
         NIBButton *equalityOperationBtn = [NIBViewUtilities buttonWithTag:NIBButtonEquality fromButtons:buttons];
-        [equalityOperationBtn addTarget:self action:@selector(performEqualityOperation:) forControlEvents:UIControlEventTouchUpInside];
+        [equalityOperationBtn addTarget:self
+                                 action:@selector(performEqualityOperation:)
+                       forControlEvents:UIControlEventTouchUpInside];
     }
 
 }
@@ -395,7 +401,10 @@ NS_ASSUME_NONNULL_END
                                             @(NIBButtonLogarithmBaseYOfX),
                                             @(NIBButtonEE) ];
 
-    [self addToButtonsWithTags:binaryOpeartionButtonTags fromButtons:buttons action:@selector(performBinaryOperation:) forControlEvent:UIControlEventTouchUpInside];
+    [self addToButtonsWithTags:binaryOpeartionButtonTags
+                   fromButtons:buttons
+                        action:@selector(performBinaryOperation:)
+               forControlEvent:UIControlEventTouchUpInside];
 
     /* add action to unary operations */
     NSArray *unaryOpeartionButtonTags = @[ @(NIBButtonXSquared),
@@ -423,20 +432,29 @@ NS_ASSUME_NONNULL_END
                                            @(NIBButtonArcCosh),
                                            @(NIBButtonArcTanh) ];
 
-    [self addToButtonsWithTags:unaryOpeartionButtonTags fromButtons:buttons action:@selector(performUnaryOperation:) forControlEvent:UIControlEventTouchUpInside];
+    [self addToButtonsWithTags:unaryOpeartionButtonTags
+                   fromButtons:buttons
+                        action:@selector(performUnaryOperation:)
+               forControlEvent:UIControlEventTouchUpInside];
 
     /* add action to parentheses operation buttons */
     NSArray *parenthesesOperationButtonTags = @[ @(NIBButtonOpenningParenthesis),
                                                  @(NIBButtonClosingParenthesis) ];
 
-    [self addToButtonsWithTags:parenthesesOperationButtonTags fromButtons:buttons action:@selector(performParenthesisOperationCalculation:) forControlEvent:UIControlEventTouchUpInside];
+    [self addToButtonsWithTags:parenthesesOperationButtonTags
+                   fromButtons:buttons
+                        action:@selector(performParenthesisOperationCalculation:)
+               forControlEvent:UIControlEventTouchUpInside];
 
     /* add action to pi, euler and rand buttons */
     NSArray *constantButtonTags = @[ @(NIBButtonPi),
                                      @(NIBButtonEulerNumber),
                                      @(NIBButtonRand) ];
 
-    [self addToButtonsWithTags:constantButtonTags fromButtons:buttons action:@selector(getConstantNumber:) forControlEvent:UIControlEventTouchUpInside];
+    [self addToButtonsWithTags:constantButtonTags
+                   fromButtons:buttons
+                        action:@selector(getConstantNumber:)
+               forControlEvent:UIControlEventTouchUpInside];
 
     /* add action to memory operation buttons */
     NSArray *memoryOperationButtonTags = @[ @(NIBButtonMemoryClear),
@@ -444,17 +462,26 @@ NS_ASSUME_NONNULL_END
                                             @(NIBButtonMemoryMinus),
                                             @(NIBButtonMemoryRead) ];
 
-    [self addToButtonsWithTags:memoryOperationButtonTags fromButtons:buttons action:@selector(performMemoryOperation:) forControlEvent:UIControlEventTouchUpInside];
+    [self addToButtonsWithTags:memoryOperationButtonTags
+                   fromButtons:buttons
+                        action:@selector(performMemoryOperation:)
+               forControlEvent:UIControlEventTouchUpInside];
 
     /* add action to secondary functional operation toggle switch buton */
-    NIBButton *secondaryFunctionalOperationToggleSwitchBtn = [NIBViewUtilities buttonWithTag:NIBButtonSecondaryFunctionalToggleSwitch fromButtons:buttons];
-    [secondaryFunctionalOperationToggleSwitchBtn addTarget:self action:@selector(toggleSecondaryFunctionalOperations:) forControlEvents:UIControlEventTouchUpInside];
+    NIBButton *secondaryFunctionalOperationToggleSwitchBtn = [NIBViewUtilities buttonWithTag:NIBButtonSecondaryFunctionalToggleSwitch
+                                                                                 fromButtons:buttons];
+    [secondaryFunctionalOperationToggleSwitchBtn addTarget:self
+                                                    action:@selector(toggleSecondaryFunctionalOperations:)
+                                          forControlEvents:UIControlEventTouchUpInside];
 
     /* add action to rad and deg buttons */
     NSArray *angleModeButtonTags = @[ @(NIBButtonRad),
                                       @(NIBButtonDeg) ];
 
-    [self addToButtonsWithTags:angleModeButtonTags fromButtons:buttons action:@selector(toggleAngleMode:) forControlEvent:UIControlEventTouchUpInside];
+    [self addToButtonsWithTags:angleModeButtonTags
+                   fromButtons:buttons
+                        action:@selector(toggleAngleMode:)
+               forControlEvent:UIControlEventTouchUpInside];
 }
 
 

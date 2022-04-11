@@ -33,6 +33,7 @@
 		10ED5CB31F98A12F0079BBF7 /* NIBSelectionLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 10ED5CB21F98A12F0079BBF7 /* NIBSelectionLabel.m */; };
 		10F55D331F9BB56800564C61 /* NIBOperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 10F55D321F9BB56800564C61 /* NIBOperator.m */; };
 		10FB11172008E201001A2967 /* Tock.aif in Resources */ = {isa = PBXBuildFile; fileRef = 10FB11162008E201001A2967 /* Tock.aif */; };
+		69F8573328047DB400685CF8 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 69F8573228047DB400685CF8 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,6 +96,7 @@
 		10F55D311F9BB56800564C61 /* NIBOperator.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NIBOperator.h; sourceTree = "<group>"; };
 		10F55D321F9BB56800564C61 /* NIBOperator.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NIBOperator.m; sourceTree = "<group>"; };
 		10FB11162008E201001A2967 /* Tock.aif */ = {isa = PBXFileReference; lastKnownFileType = file; path = Tock.aif; sourceTree = "<group>"; };
+		69F8573228047DB400685CF8 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,15 +123,6 @@
 				10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */,
 			);
 			path = Config;
-			sourceTree = "<group>";
-		};
-		10572A461F785716008B4B2D /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				10D9C8951F78513200B0D852 /* Info.plist */,
-				10D9C8961F78513200B0D852 /* main.m */,
-			);
-			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 		10572A4D1F785CE9008B4B2D /* Utility */ = {
@@ -197,6 +190,7 @@
 		10D9C8861F78513200B0D852 /* NIBCalculator */ = {
 			isa = PBXGroup;
 			children = (
+				69F8573428047F3E00685CF8 /* Main */,
 				105986A31F790394003FB7D0 /* Constant */,
 				10572A141F7855F0008B4B2D /* Config */,
 				10572A4D1F785CE9008B4B2D /* Utility */,
@@ -204,8 +198,6 @@
 				10D9C89E1F78524D00B0D852 /* View */,
 				10D9C89F1F78525200B0D852 /* Controller */,
 				10FB11152008E201001A2967 /* Resources */,
-				10572A461F785716008B4B2D /* Supporting Files */,
-				10D9C8901F78513200B0D852 /* Assets.xcassets */,
 			);
 			path = NIBCalculator;
 			sourceTree = "<group>";
@@ -261,9 +253,20 @@
 		10FB11152008E201001A2967 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				69F8573228047DB400685CF8 /* Launch Screen.storyboard */,
+				10D9C8901F78513200B0D852 /* Assets.xcassets */,
 				10FB11162008E201001A2967 /* Tock.aif */,
+				10D9C8951F78513200B0D852 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		69F8573428047F3E00685CF8 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				10D9C8961F78513200B0D852 /* main.m */,
+			);
+			path = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -310,7 +313,7 @@
 		10D9C87C1F78513200B0D852 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0910;
+				LastUpgradeCheck = 1320;
 				ORGANIZATIONNAME = "Lieu Vu";
 				TargetAttributes = {
 					107681CC1F7D28DD0073D3CD = {
@@ -355,6 +358,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69F8573328047DB400685CF8 /* Launch Screen.storyboard in Resources */,
 				10D9C8911F78513200B0D852 /* Assets.xcassets in Resources */,
 				10FB11172008E201001A2967 /* Tock.aif in Resources */,
 			);
@@ -436,6 +440,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -461,7 +466,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -473,12 +478,12 @@
 			baseConfigurationReference = 10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6PY3VJJ8B;
-				INFOPLIST_FILE = NIBCalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				INFOPLIST_FILE = NIBCalculator/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lieuvu.NIBCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -494,9 +499,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = NIBCalculatorTests/Info.plist;
+				INFOPLIST_FILE = NIBCalculator/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LV.NIBCalculatorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -511,9 +516,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = NIBCalculatorTests/Info.plist;
+				INFOPLIST_FILE = NIBCalculator/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LV.NIBCalculatorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -528,9 +533,9 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
-				INFOPLIST_FILE = NIBCalculatorTests/Info.plist;
+				INFOPLIST_FILE = NIBCalculator/Resources/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = LV.NIBCalculatorTests;
+				PRODUCT_BUNDLE_IDENTIFIER = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -562,6 +567,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -587,7 +593,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -617,6 +623,7 @@
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -636,7 +643,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -648,12 +655,12 @@
 			baseConfigurationReference = 10572A441F785678008B4B2D /* XcodeWarnings_9.0.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6PY3VJJ8B;
-				INFOPLIST_FILE = NIBCalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				INFOPLIST_FILE = NIBCalculator/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lieuvu.NIBCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -666,12 +673,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6PY3VJJ8B;
-				INFOPLIST_FILE = NIBCalculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				INFOPLIST_FILE = NIBCalculator/Resources/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lieuvu.NIBCalculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";

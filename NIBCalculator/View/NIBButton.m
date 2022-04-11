@@ -144,12 +144,22 @@ NS_ASSUME_NONNULL_END
     /* if the button is superscript */
     if (type == NIBButtonTypeSuperscript) {
         /* make the frame of extra part according to superscript */
-        extraPartLayer.frame = CGRectMake(size.width, 0, size.height * NIBButtonExtraPartSizeMultiplier, size.height * NIBButtonExtraPartSizeMultiplier);
+        extraPartLayer.frame = CGRectMake(
+          size.width,
+          0,
+          size.height * NIBButtonExtraPartSizeMultiplier,
+          size.height * NIBButtonExtraPartSizeMultiplier
+        );
         
         /* if the button is subscript */
     } else if (type == NIBButtonTypeSubscript) {
         /* make the frame of extra part according to subscript */
-        extraPartLayer.frame = CGRectMake(size.width, size.height * NIBButtonSubscriptHeightMultiplier, size.height * NIBButtonExtraPartSizeMultiplier, size.height * NIBButtonExtraPartSizeMultiplier);
+        extraPartLayer.frame = CGRectMake(
+          size.width,
+          size.height * NIBButtonSubscriptHeightMultiplier,
+          size.height * NIBButtonExtraPartSizeMultiplier,
+          size.height * NIBButtonExtraPartSizeMultiplier
+        );
     }
     extraPartLayer.contentsScale = [[UIScreen mainScreen] scale];
     extraPartLayer.foregroundColor = [[UIColor blackColor] CGColor];
@@ -190,15 +200,18 @@ NS_ASSUME_NONNULL_END
     point.y = size.height * NIBButtonSquareRootSignHeightMultiplier;
     [path addLineToPoint:point];
     // draw big diagonal line donw to bottom of text frame at big diagonal line degree
-    point.x = point.x - (CGFloat)tan(NIBButtonSquareRootSignBigDiagonalLineDegree * M_PI / 180.0f) * size.height;
+    point.x = point.x -
+      (CGFloat)tan(NIBButtonSquareRootSignBigDiagonalLineDegree * M_PI / 180.0f) * size.height;
     point.y = point.y + size.height * NIBButtonSquareRootSignBigDiagonalLineHeightMultiplier;
     [path addLineToPoint:point];
     // draw medium sized diagonal back up at medim diagonal line degree
-    point.x = point.x - (CGFloat)tan(NIBButtonSquareRootSignMediumDiagonalLineDegree * M_PI / 180.0f) * size.height * NIBButtonSquareRootSignMediumDiagonalLineHeightMultiplier;
+    point.x = point.x -
+      (CGFloat)tan(NIBButtonSquareRootSignMediumDiagonalLineDegree * M_PI / 180.0f) * size.height * NIBButtonSquareRootSignMediumDiagonalLineHeightMultiplier;
     point.y = point.y - size.height * NIBButtonSquareRootSignMediumDiagonalLineHeightMultiplier;
     [path addLineToPoint:point];
     // draw a tiny diagonal back down at degree 3
-    point.x = point.x - (CGFloat)tan(NIBButtonSquareRootSignTinyDiagonalLineDegree * M_PI /180.0f) * size.height * NIBButtonSquareRootSignTinyDiagonalLineHeightMultiplier;
+    point.x = point.x -
+      (CGFloat)tan(NIBButtonSquareRootSignTinyDiagonalLineDegree * M_PI /180.0f) * size.height * NIBButtonSquareRootSignTinyDiagonalLineHeightMultiplier;
     point.y = point.y + size.height * NIBButtonSquareRootSignTinyDiagonalLineHeightMultiplier;
     [path addLineToPoint:point];
     
@@ -216,7 +229,12 @@ NS_ASSUME_NONNULL_END
     /* create root as a layer */
     CATextLayer *rootLayer = [[CATextLayer alloc] init];
     rootLayer.contentsScale = [[UIScreen mainScreen] scale];
-    rootLayer.frame = CGRectMake(-extraLeftWidth, 0, size.height * NIBButtonRootSizeMultiplier, size.height * NIBButtonRootSizeMultiplier);
+    rootLayer.frame = CGRectMake(
+        -extraLeftWidth,
+        0,
+        size.height * NIBButtonRootSizeMultiplier,
+        size.height * NIBButtonRootSizeMultiplier
+    );
     rootLayer.wrapped = NO;
     rootLayer.fontSize = size.height * NIBButtonRootFontSizeMultiplier;
     rootLayer.alignmentMode = kCAAlignmentLeft;

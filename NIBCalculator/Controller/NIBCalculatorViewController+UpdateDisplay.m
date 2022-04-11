@@ -113,7 +113,8 @@ NS_ASSUME_NONNULL_END
 
 - (BOOL)containOnlyZerosAfterDecimalSeparatorInString:(NSString *)numStr
 {
-    NSString *temp = [self stringFromString:numStr withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
+    NSString *temp = [self stringFromString:numStr
+                        withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
     NSString *decimalSeperator = [[NSLocale currentLocale] decimalSeparator];
     NSUInteger zeroCount = 0;
     
@@ -148,7 +149,8 @@ NS_ASSUME_NONNULL_END
     NSString *numStr = [numberFormatter stringFromNumber:number];
     
     /* count digits of integer part */
-    NSUInteger  digitsOfIntegerPart = [self digitsOfIntegerPartOfDecimalNumber:number maxDisplayableDigits:maxDigits];
+    NSUInteger  digitsOfIntegerPart = [self digitsOfIntegerPartOfDecimalNumber:number
+                                                          maxDisplayableDigits:maxDigits];
     
     /* if the digits of integer part equal the number of digits in the string, return immediately */
     if (digitsOfIntegerPart == [self digitsOfString:numStr]) {
@@ -193,7 +195,8 @@ NS_ASSUME_NONNULL_END
     }
     
     /* put back the decimal separator */
-    [roundNumberStr insertString:[[NSLocale currentLocale] decimalSeparator] atIndex:roundNumberStr.length-optimizedRoundDigits];
+    [roundNumberStr insertString:[[NSLocale currentLocale] decimalSeparator]
+                         atIndex:roundNumberStr.length-optimizedRoundDigits];
     
     /* put back the negative sign if needed */
     if (number.doubleValue < 0) {
@@ -219,7 +222,8 @@ NS_ASSUME_NONNULL_END
     
     /* count the integer part length */
     NSString *decimalSeparator = [[NSLocale currentLocale] objectForKey:NSLocaleDecimalSeparator];
-    NSRange digitsOfIntegerPartRange = [[self stringFromString:numStr withRevmovalOptions:(NIBSymbolRemovalGroupingSeparator | NIBSymbolRemovalNegativePrefix)] rangeOfString:decimalSeparator];
+    NIBSymbolRemovalOptions removalOptions = (NIBSymbolRemovalGroupingSeparator | NIBSymbolRemovalNegativePrefix);
+    NSRange digitsOfIntegerPartRange = [[self stringFromString:numStr withRevmovalOptions:removalOptions] rangeOfString:decimalSeparator];
     NSUInteger digitsOfIntegerPart;
     
     /* if there is no decimal separtor found */
@@ -240,7 +244,10 @@ NS_ASSUME_NONNULL_END
     NSUInteger __block insignificantDigitsAfterDecimalSeparator = 0;
     
     /* count insignificant digits after decimal separator */
-    [numStr enumerateSubstringsInRange:NSMakeRange(0, numStr.length) options:(NSStringEnumerationReverse | NSStringEnumerationByComposedCharacterSequences) usingBlock:^(NSString *substring, NSRange __unused substringRange, NSRange __unused enclosingRange, BOOL * stop) {
+    NSStringEnumerationOptions options = (NSStringEnumerationReverse | NSStringEnumerationByComposedCharacterSequences);
+    [numStr enumerateSubstringsInRange:NSMakeRange(0, numStr.length)
+                               options: options
+                            usingBlock:^(NSString *substring, NSRange __unused substringRange, NSRange __unused enclosingRange, BOOL * stop) {
         /* stop when reach decimal or a digit not zero */
         if ([substring isEqualToString:decimalSeparator] ||
             ![substring isEqualToString:@"0"]) {
@@ -430,7 +437,8 @@ NS_ASSUME_NONNULL_END
         if ( ![self.portraitCalculatorView.mainDisplay.text containsString:NIBExponentSymbol] &&
             (NSUInteger)labs(exponent) >= NIBMaxDigitsInPortrait ) {
             
-            self.portraitCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number maxDisplayableDigits:NIBMaxDigitsInPortrait];
+            self.portraitCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number
+                                                                               maxDisplayableDigits:NIBMaxDigitsInPortrait];
             
             /* otherwise, portrait display is either in scientific notation or
              the number in scientific notation form has exponent smaller than
@@ -456,8 +464,10 @@ NS_ASSUME_NONNULL_END
     /* max digits to display */
     NSUInteger maxDigits = [self digitsOfString:numStr];
     
-    [self updateMainDisplayOfPortraitCalculatorViewWithNumber:[numberFormatter numberFromString:formatedNumberStr] maxDisplayableDigits:maxDigits];
-    [self updateMainDisplayOfLandscapeCalculatorViewWithNumber:[numberFormatter numberFromString:formatedNumberStr] maxDisplayableDigits:maxDigits];
+    [self updateMainDisplayOfPortraitCalculatorViewWithNumber:[numberFormatter numberFromString:formatedNumberStr]
+                                         maxDisplayableDigits:maxDigits];
+    [self updateMainDisplayOfLandscapeCalculatorViewWithNumber:[numberFormatter numberFromString:formatedNumberStr]
+                                          maxDisplayableDigits:maxDigits];
 }
 
 - (void)updateMainDisplayOfPortraitCalculatorViewWithNumber:(NSNumber *)number
@@ -488,14 +498,16 @@ NS_ASSUME_NONNULL_END
             
         /* otherwise, the number is out of range. This number is only created in landscape view */
         } else {
-            self.portraitCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number maxDisplayableDigits:maxDigits];
+            self.portraitCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number
+                                                                               maxDisplayableDigits:maxDigits];
         }
         
     /*--- otherwise, the number is decimal ---*/
         
     /* if the number needs to display in scientific notation */
     } else if ([self needScienficNotationOfDecimalNumber:number maxDisplayableDigits:NIBMaxDigitsInPortrait]) {
-            self.portraitCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number maxDisplayableDigits:maxDigits];
+            self.portraitCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number
+                                                                               maxDisplayableDigits:maxDigits];
       
     /* otherwise, the number display normally */
     } else {
@@ -529,18 +541,21 @@ NS_ASSUME_NONNULL_END
             
         /* otherwise, the number is out of range */
         } else {
-            self.landscapeCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number maxDisplayableDigits:maxDigits];
+            self.landscapeCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number
+                                                                                maxDisplayableDigits:maxDigits];
         }
     
     /*--- otherwise, the number is decimal ---*/
      
     /* if the number needs to display in scientific notation */
     } else if ([self needScienficNotationOfDecimalNumber:number maxDisplayableDigits:NIBMaxDigitsInLandscape]) {
-        self.landscapeCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number maxDisplayableDigits:NIBMaxDigitsInLandscape];
+        self.landscapeCalculatorView.mainDisplay.text = [self stringInScientificNotationOfNumber:number
+                                                                            maxDisplayableDigits:NIBMaxDigitsInLandscape];
         
     /* otherwise, the number display normally */
     } else {
-        self.landscapeCalculatorView.mainDisplay.text = [self stringOfDecimalNumber:number maxDisplayableDigits:maxDigits];
+        self.landscapeCalculatorView.mainDisplay.text = [self stringOfDecimalNumber:number
+                                                               maxDisplayableDigits:maxDigits];
     }
 }
 

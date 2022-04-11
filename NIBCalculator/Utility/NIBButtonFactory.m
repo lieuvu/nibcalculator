@@ -47,8 +47,11 @@ static const CGFloat NIBButtonWhiteHighlighted = 0.65f;
     
     /* digit and decimal buttons */
     for (NSString *buttonTitle in digitAndDecmialButtons) {
-        NIBButton *btn = [[NIBButton alloc] initWithLabelTitle:buttonTitle font:font tag:[digitAndDecmialButtons[buttonTitle] integerValue]];
-        [btn setBackground:[UIColor colorWithWhite:NIBButtonDigitsAndDecimalWhite alpha:1.0] highlightedBackground:[UIColor colorWithWhite:NIBButtonWhiteHighlighted alpha:1.0]];
+        NIBButton *btn = [[NIBButton alloc] initWithLabelTitle:buttonTitle
+                                                          font:font
+                                                           tag:[digitAndDecmialButtons[buttonTitle] integerValue]];
+        [btn setBackground:[UIColor colorWithWhite:NIBButtonDigitsAndDecimalWhite alpha:1.0]
+                highlightedBackground:[UIColor colorWithWhite:NIBButtonWhiteHighlighted alpha:1.0]];
         [buttons addObject:btn];
     }
 }
@@ -63,8 +66,13 @@ static const CGFloat NIBButtonWhiteHighlighted = 0.65f;
     
     /* main operator buttons */
     for (NSString *buttonTitle in mainOperatorButtons) {
-        NIBButton *btn = [[NIBButton alloc] initWithLabelTitle:buttonTitle font:font tag:[mainOperatorButtons[buttonTitle] integerValue] ];
-        [btn setBackground:[UIColor orangeColor] highlightedBackground:[UIColor colorWithRed:(CGFloat)214.0/255 green:(CGFloat)106.0/255 blue:0 alpha:1.0]];
+        NIBButton *btn = [[NIBButton alloc] initWithLabelTitle:buttonTitle
+                                                          font:font
+                                                           tag:[mainOperatorButtons[buttonTitle] integerValue] ];
+        [btn setBackground:[UIColor orangeColor]
+                highlightedBackground:[UIColor colorWithRed:(CGFloat)214.0/255
+                                                      green:(CGFloat)106.0/255
+                                                       blue:0 alpha:1.0]];
         [btn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [buttons addObject:btn];
     }
@@ -81,7 +89,8 @@ static const CGFloat NIBButtonWhiteHighlighted = 0.65f;
     /* main buttons */
     for (NSString *buttonTitle in mainButtons) {
         NIBButton *btn = [[NIBButton alloc] initWithLabelTitle:buttonTitle font:font tag:[mainButtons[buttonTitle]  integerValue]];
-        [btn setBackground:[UIColor colorWithWhite:NIBButtonOthersWhite alpha:1.0] highlightedBackground:[UIColor colorWithWhite:NIBButtonWhiteHighlighted alpha:1.0]];
+        [btn setBackground:[UIColor colorWithWhite:NIBButtonOthersWhite alpha:1.0]
+                highlightedBackground:[UIColor colorWithWhite:NIBButtonWhiteHighlighted alpha:1.0]];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [buttons addObject:btn];
     }
@@ -113,8 +122,11 @@ static const CGFloat NIBButtonWhiteHighlighted = 0.65f;
     
     /* text representable buttons in landscape */
     for (NSString *buttonTitle in textRepresentableFunctionalButtons) {
-        NIBButton *btn = [[NIBButton alloc] initWithLabelTitle:buttonTitle font:font tag:[textRepresentableFunctionalButtons[buttonTitle] integerValue] ];
-        [btn setBackground:[UIColor colorWithWhite:NIBButtonOthersWhite alpha:1.0] highlightedBackground:[UIColor colorWithWhite:NIBButtonWhiteHighlighted alpha:1.0]];
+        NIBButton *btn = [[NIBButton alloc] initWithLabelTitle:buttonTitle
+                                                          font:font
+                                                           tag:[textRepresentableFunctionalButtons[buttonTitle] integerValue]];
+        [btn setBackground:[UIColor colorWithWhite:NIBButtonOthersWhite alpha:1.0]
+                highlightedBackground:[UIColor colorWithWhite:NIBButtonWhiteHighlighted alpha:1.0]];
         [btn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
         [buttons addObject:btn];
     }
@@ -125,71 +137,151 @@ static const CGFloat NIBButtonWhiteHighlighted = 0.65f;
     NSMutableArray *tempButtons = [[NSMutableArray alloc] init];
     
     /* 2nd (secondary functional) button */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"2" font:font extraPart:@"nd" type:NIBButtonTypeSuperscript tag:NIBButtonSecondaryFunctionalToggleSwitch]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"2"
+                                                            font:font
+                                                       extraPart:@"nd"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonSecondaryFunctionalToggleSwitch]];
     
     /* x squared */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x" font:font extraPart:@"2" type:NIBButtonTypeSuperscript tag:NIBButtonXSquared]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x"
+                                                            font:font
+                                                       extraPart:@"2"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonXSquared]];
     
     /* x cubed */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x" font:font extraPart:@"3" type:NIBButtonTypeSuperscript tag:NIBButtonXCubed]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x"
+                                                            font:font
+                                                       extraPart:@"3"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonXCubed]];
     
     /* x power y */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x" font:font extraPart:@"y" type:NIBButtonTypeSuperscript tag:NIBButtonXPowerY]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x"
+                                                            font:font
+                                                       extraPart:@"y"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonXPowerY]];
     
     /* e power x */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"e" font:font extraPart:@"x" type:NIBButtonTypeSuperscript tag:NIBButtonEulerNumberPowerX]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"e"
+                                                            font:font
+                                                       extraPart:@"x"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonEulerNumberPowerX]];
     
     /* y power x */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"y" font:font extraPart:@"x" type:NIBButtonTypeSuperscript tag:NIBButtonYPowerX]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"y"
+                                                            font:font
+                                                       extraPart:@"x"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonYPowerX]];
     
     /* 10 power x */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"10" font:font extraPart:@"x" type:NIBButtonTypeSuperscript tag:NIBButtonTenPowerX]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"10"
+                                                            font:font
+                                                       extraPart:@"x"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonTenPowerX]];
     
     /* 2 power x */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"2" font:font extraPart:@"x" type:NIBButtonTypeSuperscript tag:NIBButtonTwoPowerX]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"2"
+                                                            font:font
+                                                       extraPart:@"x"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonTwoPowerX]];
     
     /* logarithm base y of x */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"log" font:font extraPart:@"y" type:NIBButtonTypeSubscript tag:NIBButtonLogarithmBaseYOfX]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"log"
+                                                            font:font
+                                                       extraPart:@"y"
+                                                            type:NIBButtonTypeSubscript
+                                                             tag:NIBButtonLogarithmBaseYOfX]];
     
     /* common logarithm */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"log" font:font extraPart:@"10" type:NIBButtonTypeSubscript tag:NIBButtonCommonLogarithm]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"log"
+                                                            font:font
+                                                       extraPart:@"10"
+                                                            type:NIBButtonTypeSubscript
+                                                             tag:NIBButtonCommonLogarithm]];
     
     /* logarithm of base 2 */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"log" font:font extraPart:@"2" type:NIBButtonTypeSubscript tag:NIBButtonLogarithmBaseTwo]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"log"
+                                                            font:font
+                                                       extraPart:@"2"
+                                                            type:NIBButtonTypeSubscript
+                                                             tag:NIBButtonLogarithmBaseTwo]];
     
     /* square root of x */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x" font:font root:@"2" tag:NIBButtonSquareRootOfX]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x"
+                                                            font:font
+                                                            root:@"2"
+                                                             tag:NIBButtonSquareRootOfX]];
     
     /* cubic root of x */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x" font:font root:@"3" tag:NIBButtonCubicRootOfX]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x"
+                                                            font:font
+                                                            root:@"3"
+                                                             tag:NIBButtonCubicRootOfX]];
     
     /* yth root of x */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x" font:font root:@"y" tag:NIBButtonYthRootOfX]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"x"
+                                                            font:font
+                                                            root:@"y"
+                                                             tag:NIBButtonYthRootOfX]];
     
     /* 1 over x */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitleAsDenominator:@"x" font:font numerator:@"1" tag:NIBButtonOneOverX]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitleAsDenominator:@"x"
+                                                                         font:font
+                                                                    numerator:@"1"
+                                                                          tag:NIBButtonOneOverX]];
     
     /* arcsin */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"sin" font:font extraPart:@"-1" type:NIBButtonTypeSuperscript tag:NIBButtonArcSin]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"sin"
+                                                            font:font
+                                                       extraPart:@"-1"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonArcSin]];
     
     /* arccos */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"cos" font:font extraPart:@"-1" type:NIBButtonTypeSuperscript tag:NIBButtonArcCos]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"cos"
+                                                            font:font
+                                                       extraPart:@"-1"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonArcCos]];
     
     /* arcsin */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"tan" font:font extraPart:@"-1" type:NIBButtonTypeSuperscript tag:NIBButtonArcTan]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"tan"
+                                                            font:font extraPart:@"-1"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonArcTan]];
     
     /* arcsinh */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"sinh" font:font extraPart:@"-1" type:NIBButtonTypeSuperscript tag:NIBButtonArcSinh]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"sinh"
+                                                            font:font
+                                                       extraPart:@"-1"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonArcSinh]];
     
     /* arccosh */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"cosh" font:font extraPart:@"-1" type:NIBButtonTypeSuperscript tag:NIBButtonArcCosh]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"cosh"
+                                                            font:font
+                                                       extraPart:@"-1"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonArcCosh]];
     
     /* arctanh */
-    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"tanh" font:font extraPart:@"-1" type:NIBButtonTypeSuperscript tag:NIBButtonArcTanh]];
+    [tempButtons addObject:[[NIBButton alloc] initWithLabelTitle:@"tanh"
+                                                            font:font
+                                                       extraPart:@"-1"
+                                                            type:NIBButtonTypeSuperscript
+                                                             tag:NIBButtonArcTanh]];
     
     /* background color of functional buttons */
     for (NIBButton *btn in tempButtons) {
-        [btn setBackground:[UIColor colorWithWhite:NIBButtonOthersWhite alpha:1.0] highlightedBackground:[UIColor colorWithWhite:NIBButtonWhiteHighlighted alpha:1.0]];
+        [btn setBackground:[UIColor colorWithWhite:NIBButtonOthersWhite alpha:1.0]
+                highlightedBackground:[UIColor colorWithWhite:NIBButtonWhiteHighlighted alpha:1.0]];
     }
     
     [buttons addObjectsFromArray:tempButtons];

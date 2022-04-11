@@ -200,16 +200,22 @@ NS_ASSUME_NONNULL_END
 
 - (void)toggleSecondaryFunctionalButtons
 {
-    NSDictionary<NSNumber *, NSNumber *> *hiddenRefOfSecondRow = @{ @(NIBButtonEulerNumberPowerX) : @(NIBButtonYPowerX), @(NIBButtonTenPowerX) : @(NIBButtonTwoPowerX) };
+    NSDictionary<NSNumber *, NSNumber *> *hiddenRefOfSecondRow = @{ @(NIBButtonEulerNumberPowerX) : @(NIBButtonYPowerX),
+                                                                    @(NIBButtonTenPowerX) : @(NIBButtonTwoPowerX) };
     UIStackView *secondRow = self.buttonBoard.arrangedSubviews[1];
     
-    NSDictionary<NSNumber *, NSNumber *> *hiddenRefOfThirdRow = @{ @(NIBButtonNaturalLogarithm) : @(NIBButtonLogarithmBaseYOfX), @(NIBButtonCommonLogarithm) : @(NIBButtonLogarithmBaseTwo) };
+    NSDictionary<NSNumber *, NSNumber *> *hiddenRefOfThirdRow = @{ @(NIBButtonNaturalLogarithm) : @(NIBButtonLogarithmBaseYOfX),
+                                                                   @(NIBButtonCommonLogarithm) : @(NIBButtonLogarithmBaseTwo) };
     UIStackView *thirdRow = self.buttonBoard.arrangedSubviews[2];
     
-    NSDictionary<NSNumber *, NSNumber *> *hiddenRefOfFourthRow = @{ @(NIBButtonSin) : @(NIBButtonArcSin), @(NIBButtonCos) : @(NIBButtonArcCos), @(NIBButtonTan) : @(NIBButtonArcTan) };
+    NSDictionary<NSNumber *, NSNumber *> *hiddenRefOfFourthRow = @{ @(NIBButtonSin) : @(NIBButtonArcSin),
+                                                                    @(NIBButtonCos) : @(NIBButtonArcCos),
+                                                                    @(NIBButtonTan) : @(NIBButtonArcTan) };
     UIStackView *fourthRow = self.buttonBoard.arrangedSubviews[3];
     
-    NSDictionary<NSNumber *, NSNumber *> *hiddenRefOfFifthRow = @{ @(NIBButtonSinh) : @(NIBButtonArcSinh), @(NIBButtonCosh) : @(NIBButtonArcCosh), @(NIBButtonTanh) : @(NIBButtonArcTanh) };
+    NSDictionary<NSNumber *, NSNumber *> *hiddenRefOfFifthRow = @{ @(NIBButtonSinh) : @(NIBButtonArcSinh),
+                                                                   @(NIBButtonCosh) : @(NIBButtonArcCosh),
+                                                                   @(NIBButtonTanh) : @(NIBButtonArcTanh) };
     UIStackView *fifthRow = self.buttonBoard.arrangedSubviews[4];
     
     [NIBViewUtilities toggleHiddenButtonsOfRow:secondRow basedOnReference:hiddenRefOfSecondRow];
@@ -257,11 +263,16 @@ NS_ASSUME_NONNULL_END
 - (void)createButtonBoard
 {
     /* create buttons in landscape */
-    [NIBButtonFactory addDigitAndDecimalSeparatorButtonsWithFont:[UIFont fontWithName:NIBFontThin size:NIBButtonLargeFontSize] toButtons:self.btns];
-    [NIBButtonFactory addArithmeticOperationButtonsWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonLargeFontSize] toButtons:self.btns];
-    [NIBButtonFactory addOtherCommonButtonsWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonSmallFontSize] toButtons:self.btns];
-    [NIBButtonFactory addTextRepresentableFunctionalButtonsInLandscapeWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonSmallFontSize] toButtons:self.btns];
-    [NIBButtonFactory addSpecialTextRepresentableFuncionalButtonsInLandscapeWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonSmallFontSize] toButtons:self.btns];
+    [NIBButtonFactory addDigitAndDecimalSeparatorButtonsWithFont:[UIFont fontWithName:NIBFontThin size:NIBButtonLargeFontSize]
+                                                       toButtons:self.btns];
+    [NIBButtonFactory addArithmeticOperationButtonsWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonLargeFontSize]
+                                                  toButtons:self.btns];
+    [NIBButtonFactory addOtherCommonButtonsWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonSmallFontSize]
+                                          toButtons:self.btns];
+    [NIBButtonFactory addTextRepresentableFunctionalButtonsInLandscapeWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonSmallFontSize]
+                                                                     toButtons:self.btns];
+    [NIBButtonFactory addSpecialTextRepresentableFuncionalButtonsInLandscapeWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonSmallFontSize]
+                                                                           toButtons:self.btns];
     
     /* set border width in landscape */
     for (NIBButton *btn in self.btns) {
@@ -378,8 +389,10 @@ NS_ASSUME_NONNULL_END
 {
     [[self.secondaryDisplay.leadingAnchor constraintEqualToAnchor:self.leadingAnchor] setActive:YES];
     [[self.secondaryDisplay.bottomAnchor constraintEqualToAnchor:self.mainDisplay.bottomAnchor] setActive:YES];
-    [[self.secondaryDisplay.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:NIBSecondaryDisplayHeightMultiplier] setActive:YES];
-    [[self.secondaryDisplay.widthAnchor constraintEqualToAnchor:self.widthAnchor multiplier:NIBSecondaryDisplayWidthMultiplier] setActive:YES];
+    [[self.secondaryDisplay.heightAnchor constraintEqualToAnchor:self.heightAnchor
+                                                      multiplier:NIBSecondaryDisplayHeightMultiplier] setActive:YES];
+    [[self.secondaryDisplay.widthAnchor constraintEqualToAnchor:self.widthAnchor
+                                                     multiplier:NIBSecondaryDisplayWidthMultiplier] setActive:YES];
 }
 
 - (void)layoutButtonBoard
@@ -417,11 +430,13 @@ NS_ASSUME_NONNULL_END
     for (NSNumber *tag in buttonTagsInLastRow) {
         NIBButton *btn = [NIBViewUtilities buttonWithTag:tag.integerValue fromButtons:self.btns];
         if ([conflictConstraintsButtonTags containsObject:tag]) {
-            NSLayoutConstraint *constraint = [btn.widthAnchor constraintEqualToAnchor:zeroBtn.widthAnchor multiplier:NIBLastRowButtonWidthAgainstZeroButtonWidthMultipler];
+            NSLayoutConstraint *constraint = [btn.widthAnchor constraintEqualToAnchor:zeroBtn.widthAnchor
+                                                                           multiplier:NIBLastRowButtonWidthAgainstZeroButtonWidthMultipler];
             constraint.priority = 999;
             constraint.active = YES;
         } else {
-            [[btn.widthAnchor constraintEqualToAnchor:zeroBtn.widthAnchor multiplier:NIBLastRowButtonWidthAgainstZeroButtonWidthMultipler] setActive:YES];
+            [[btn.widthAnchor constraintEqualToAnchor:zeroBtn.widthAnchor
+                                           multiplier:NIBLastRowButtonWidthAgainstZeroButtonWidthMultipler] setActive:YES];
         }
     }
     
@@ -448,7 +463,8 @@ NS_ASSUME_NONNULL_END
     [[self.buttonBoard.leadingAnchor constraintEqualToAnchor:self.leadingAnchor] setActive:YES];
     [[self.buttonBoard.bottomAnchor constraintEqualToAnchor:self.bottomAnchor] setActive:YES];
     [[self.buttonBoard.trailingAnchor constraintEqualToAnchor:self.trailingAnchor] setActive:YES];
-    [[self.buttonBoard.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:NIBButtonBoardHeightMultiplier] setActive:YES];
+    [[self.buttonBoard.heightAnchor constraintEqualToAnchor:self.heightAnchor
+                                                 multiplier:NIBButtonBoardHeightMultiplier] setActive:YES];
     
     
 }

@@ -81,8 +81,11 @@ static NSString * const NIBLastUsedAngleModeIsRadian = @"NIB Angle Mode Is Radia
     } else {
         [dictOfData setObject:[NSNumber numberWithBool:YES] forKey:NIBLastUsedAngleModeIsRadian];
     }
-    
-    [[NSKeyedArchiver archivedDataWithRootObject:dictOfData] writeToFile:dataPath atomically:YES];
+
+    [[NSKeyedArchiver archivedDataWithRootObject:dictOfData
+                           requiringSecureCoding:NO error:nil]
+     writeToFile:dataPath
+     atomically:YES];
 }
 
 
@@ -94,7 +97,8 @@ static NSString * const NIBLastUsedAngleModeIsRadian = @"NIB Angle Mode Is Radia
 {
     NSArray *path = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
     NSString *dataPath = [[path firstObject] stringByAppendingPathComponent:NIBLastUsedDataFile];
-    NSData *data = [NSKeyedUnarchiver unarchiveObjectWithFile:dataPath];
+    NSData *data =  [NSData  dataWithContentsOfFile:dataPath];
+    data = [NSKeyedUnarchiver unarchivedObjectOfClass:[NSMutableDictionary class] fromData:data error:nil];
     
     id obj;
     
@@ -108,7 +112,8 @@ static NSString * const NIBLastUsedAngleModeIsRadian = @"NIB Angle Mode Is Radia
     obj = [data valueForKey:NIBLastUsedCalculatorMemory];
     if (obj != [NSNull null] && [obj isKindOfClass:[NSNumber class]]) {
         
-        NIBButton *memoryReadBtn = [NIBViewUtilities buttonWithTag:NIBButtonMemoryRead fromButtons:self.landscapeCalculatorView.buttons];
+        NIBButton *memoryReadBtn = [NIBViewUtilities buttonWithTag:NIBButtonMemoryRead
+                                                       fromButtons:self.landscapeCalculatorView.buttons];
         
         [self.calculator addToMemory:[(NSNumber *)obj doubleValue]];
         [memoryReadBtn toggleEffect];
@@ -117,7 +122,8 @@ static NSString * const NIBLastUsedAngleModeIsRadian = @"NIB Angle Mode Is Radia
     /* restore secondary functional operation toggle switch state */
     obj = [data valueForKey:NIBLastUsedSecondaryFunctionalButtonsIsToogled];
     if ([obj isKindOfClass:[NSNumber class]] && [(NSNumber *)obj boolValue]) {
-        NIBButton *secondaryFunctionalOperationToggleSwitchBtn = [NIBViewUtilities buttonWithTag:NIBButtonSecondaryFunctionalToggleSwitch fromButtons:self.landscapeCalculatorView.buttons];
+        NIBButton *secondaryFunctionalOperationToggleSwitchBtn = [NIBViewUtilities buttonWithTag:NIBButtonSecondaryFunctionalToggleSwitch
+                                                                                     fromButtons:self.landscapeCalculatorView.buttons];
         
         [secondaryFunctionalOperationToggleSwitchBtn toggleEffect];
         [self.landscapeCalculatorView toggleSecondaryFunctionalButtons];
@@ -126,7 +132,8 @@ static NSString * const NIBLastUsedAngleModeIsRadian = @"NIB Angle Mode Is Radia
     /* restore last used angle mode */
     obj = [data valueForKey:NIBLastUsedAngleModeIsRadian];
     if ([obj isKindOfClass:[NSNumber class]] && [(NSNumber *)obj boolValue] ) {
-        NIBButton *radianBtn = [NIBViewUtilities buttonWithTag:NIBButtonRad fromButtons:self.landscapeCalculatorView.buttons];
+        NIBButton *radianBtn = [NIBViewUtilities buttonWithTag:NIBButtonRad
+                                                   fromButtons:self.landscapeCalculatorView.buttons];
         
         /* toggle radian mode */
         [self.landscapeCalculatorView toggleAngleMode];

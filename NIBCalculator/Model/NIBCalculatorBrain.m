@@ -715,7 +715,8 @@ NS_ASSUME_NONNULL_END
 - (NSNumber *)processClosingParenthesisOperator:(NIBOperator *)operator
 {
     NSNumber *result = nil;
-    NSArray *partialInfExp = [self partialInfixExpressionFromExpression:self.infixExpression asLeftOperandOfAddingOperator:operator];
+    NSArray *partialInfExp = [self partialInfixExpressionFromExpression:self.infixExpression
+                                          asLeftOperandOfAddingOperator:operator];
     
     result = [self evaluateInfixExpression:partialInfExp];
     
@@ -791,7 +792,8 @@ NS_ASSUME_NONNULL_END
     if ([self canEvalualateInfixExpression]) {
         
         /* partical infix expression */
-        NSArray *partialInfExp = [self partialInfixExpressionFromExpression:self.infixExpression asLeftOperandOfAddingOperator:operator];
+        NSArray *partialInfExp = [self partialInfixExpressionFromExpression:self.infixExpression
+                                              asLeftOperandOfAddingOperator:operator];
         
         /* evaluate the partial infix expression */
         result = [self evaluateInfixExpression:partialInfExp];
@@ -876,7 +878,8 @@ NS_ASSUME_NONNULL_END
                 case NIBButtonLogarithmBaseYOfX:
                 {
                     NSNumber *base = [calStack pop];
-                    NSNumber *result = [self performLogarithmFunctionOf:[calStack pop] withRespectToBase:base];
+                    NSNumber *result = [self performLogarithmFunctionOf:[calStack pop]
+                                                      withRespectToBase:base];
                     [calStack push:result];
                     break;
                 }

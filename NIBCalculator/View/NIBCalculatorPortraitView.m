@@ -177,9 +177,12 @@ NS_ASSUME_NONNULL_END
 - (void)createButtonBoard
 {
     /* create buttons in portrait */
-    [NIBButtonFactory addDigitAndDecimalSeparatorButtonsWithFont:[UIFont fontWithName:NIBFontThin size:NIBButtonMediumFontSize] toButtons:self.btns ];
-    [NIBButtonFactory addArithmeticOperationButtonsWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonLargeFontSize] toButtons:self.btns];
-    [NIBButtonFactory addOtherCommonButtonsWithFont:[UIFont fontWithName:NIBFontThin size:NIBButtonSmallFontSize] toButtons:self.btns ];
+    [NIBButtonFactory addDigitAndDecimalSeparatorButtonsWithFont:[UIFont fontWithName:NIBFontThin size:NIBButtonMediumFontSize]
+                                                       toButtons:self.btns ];
+    [NIBButtonFactory addArithmeticOperationButtonsWithFont:[UIFont fontWithName:NIBFontLight size:NIBButtonLargeFontSize]
+                                                  toButtons:self.btns];
+    [NIBButtonFactory addOtherCommonButtonsWithFont:[UIFont fontWithName:NIBFontThin size:NIBButtonSmallFontSize]
+                                          toButtons:self.btns ];
     
     /* set border width in portrait */
     for (NIBButton *btn in self.btns) {
@@ -245,10 +248,13 @@ NS_ASSUME_NONNULL_END
 - (void)layoutMainDisplay
 {
     /* layout main display on the portrait calculator */
-    [[self.mainDisplay.leadingAnchor constraintEqualToAnchor:self.leadingAnchor constant:NIBMainDisplayMargin] setActive:YES];
+    [[self.mainDisplay.leadingAnchor constraintEqualToAnchor:self.leadingAnchor
+                                                    constant:NIBMainDisplayMargin] setActive:YES];
     [[self.mainDisplay.bottomAnchor constraintEqualToAnchor:self.buttonBoard.topAnchor] setActive:YES];
-    [[self.mainDisplay.trailingAnchor constraintEqualToAnchor:self.trailingAnchor constant:-NIBMainDisplayMargin] setActive:YES];
-    [[self.mainDisplay.heightAnchor constraintEqualToAnchor:self.heightAnchor multiplier:NIBMainDisplayHeightMultiplier] setActive:YES];
+    [[self.mainDisplay.trailingAnchor constraintEqualToAnchor:self.trailingAnchor
+                                                     constant:-NIBMainDisplayMargin] setActive:YES];
+    [[self.mainDisplay.heightAnchor constraintEqualToAnchor:self.heightAnchor
+                                                 multiplier:NIBMainDisplayHeightMultiplier] setActive:YES];
 }
 
 - (void)layoutButtonBoard
@@ -272,7 +278,8 @@ NS_ASSUME_NONNULL_END
     for (NSNumber *tag in firstButtonTagsInEachRow) {
         NIBButton *btn = [NIBViewUtilities buttonWithTag:tag.integerValue fromButtons:self.btns];
         if (tag.integerValue == NIBButtonZero) {
-            [[btn.heightAnchor constraintEqualToAnchor:btn.widthAnchor multiplier:NIBButtonBoardZeroButtonHeightOverWidthRatioMultiplier] setActive:YES];
+            [[btn.heightAnchor constraintEqualToAnchor:btn.widthAnchor
+                                            multiplier:NIBButtonBoardZeroButtonHeightOverWidthRatioMultiplier] setActive:YES];
         } else if ([conflictConstraintsButtonTags containsObject:tag]) {
              /* lower priority of clear button constraint when hiding */
             NSLayoutConstraint *constraint = [btn.heightAnchor constraintEqualToAnchor:btn.widthAnchor];

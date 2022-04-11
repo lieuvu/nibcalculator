@@ -160,8 +160,11 @@ NS_ASSUME_NONNULL_END
             NSStringDrawingContext *context = [[NSStringDrawingContext alloc] init];
             context.minimumScaleFactor = currentDisplay.minimumScaleFactor;
             
-            NSAttributedString *temp = [[NSAttributedString alloc] initWithString:currentDisplay.text attributes:@{NSFontAttributeName : currentDisplay.font}];
-            [temp boundingRectWithSize:currentDisplay.frame.size options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading) context:context];
+            NSAttributedString *temp = [[NSAttributedString alloc] initWithString:currentDisplay.text
+                                                                       attributes:@{NSFontAttributeName : currentDisplay.font}];
+            [temp boundingRectWithSize:currentDisplay.frame.size
+                               options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
+                               context:context];
             
             fontSize = currentDisplay.font.pointSize * context.actualScaleFactor;
         }
@@ -188,7 +191,8 @@ NS_ASSUME_NONNULL_END
         /* if the view is portrait */
         if ([self.currentCalculatorView isKindOfClass:[NIBCalculatorPortraitView class]]) {
             /* selected label bottom equals the main display bottom minus the margin */
-            [[self.selectionLabel.bottomAnchor constraintEqualToAnchor:currentDisplay.bottomAnchor constant:-NIBMainDisplayMargin] setActive:YES];
+            [[self.selectionLabel.bottomAnchor constraintEqualToAnchor:currentDisplay.bottomAnchor
+                                                              constant:-NIBMainDisplayMargin] setActive:YES];
             /* selected label height equals the font size plus two times the margin */
             [[self.selectionLabel.heightAnchor constraintEqualToConstant:fontSize+2*NIBMainDisplayMargin] setActive:YES];
         
@@ -376,7 +380,8 @@ NS_ASSUME_NONNULL_END
     /* toggle effect of current binary operator is selected */
     if (self.currentBinaryOperation.selected) [self.currentBinaryOperation toggleEffect];
     
-    NIBButton *arithmeticClearBtn = [NIBViewUtilities buttonWithTag:NIBButtonArithmeticClear fromButtons:currentCalView.buttons];
+    NIBButton *arithmeticClearBtn = [NIBViewUtilities buttonWithTag:NIBButtonArithmeticClear
+                                                        fromButtons:currentCalView.buttons];
     
     /* switch to clear button if needed */
     if (arithmeticClearBtn.hidden == NO) [self toggleArithmeticClearButtonOrClearButton];
@@ -385,7 +390,8 @@ NS_ASSUME_NONNULL_END
 
 - (void)performUnaryOperation:(NIBButton *)button
 {
-    NSString *numStr = [self stringFromString:self.currentCalculatorView.mainDisplay.text withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
+    NSString *numStr = [self stringFromString:self.currentCalculatorView.mainDisplay.text
+                          withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
     
     /* if number string is not a number */
     if ([numStr isEqualToString:NIBMainDisplayErrorText]) {
@@ -400,7 +406,8 @@ NS_ASSUME_NONNULL_END
     }
     
     /* update main displays with number from calculation */
-    [self updateMainDisplaysWithNumber:[self.calculator performOperator:[NIBOperator operatorWithTag:button.tag]] maxDisplayableDigits:NIBMaxDigitsInLandscape];
+    [self updateMainDisplaysWithNumber:[self.calculator performOperator:[NIBOperator operatorWithTag:button.tag]]
+                  maxDisplayableDigits:NIBMaxDigitsInLandscape];
     
     /* result is displayed */
     self.resultDisplayed = YES;
@@ -416,12 +423,15 @@ NS_ASSUME_NONNULL_END
         numberFormatter.locale = [NSLocale currentLocale];
         numberFormatter.numberStyle = NSNumberFormatterDecimalStyle;
         numberFormatter.maximumFractionDigits = NIBMaxDigitsInLandscape;
-        
-        currentResultDigits = [self digitsOfString:[numberFormatter stringFromNumber:[self.calculator performOperator:[NIBOperator operatorWithTag:button.tag] withExperimentalModeOn:YES]]];
+
+      NSNumber *number = [self.calculator performOperator:[NIBOperator operatorWithTag:button.tag]
+                                   withExperimentalModeOn:YES];
+        currentResultDigits = [self digitsOfString:[numberFormatter stringFromNumber: number]];
     }
     
     /* find max digits from binary operation to display on screen */
-    NSString *numStr = [self stringFromString:self.currentCalculatorView.mainDisplay.text withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
+    NSString *numStr = [self stringFromString:self.currentCalculatorView.mainDisplay.text
+                          withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
     NSUInteger maxDigits;
     
     switch (button.tag) {
@@ -491,7 +501,8 @@ NS_ASSUME_NONNULL_END
     }
     
     /* update main displays with number from calculation */
-    [self updateMainDisplaysWithNumber:[self.calculator performOperator:[NIBOperator operatorWithTag:self.currentBinaryOperation.tag]] maxDisplayableDigits:maxDigits];
+    NSNumber *number = [self.calculator performOperator:[NIBOperator operatorWithTag:self.currentBinaryOperation.tag]];
+    [self updateMainDisplaysWithNumber: number maxDisplayableDigits:maxDigits];
     
     /* result is displayed */
     self.resultDisplayed = YES;
@@ -499,7 +510,8 @@ NS_ASSUME_NONNULL_END
 
 - (void)performEqualityOperation:(NIBButton *)button
 {
-    NSString *numStr = [self stringFromString:self.currentCalculatorView.mainDisplay.text withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
+    NSString *numStr = [self stringFromString:self.currentCalculatorView.mainDisplay.text
+                          withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
     
     /* if number string is not a number */
     if ([numStr isEqualToString:NIBMainDisplayErrorText]) {
@@ -524,7 +536,8 @@ NS_ASSUME_NONNULL_END
     NSUInteger maxDigits = [self digitsOfResultAfterPerfomingOperator:[NIBOperator operatorWithTag:button.tag]];
     
     /* update main displays with number from calculation */
-    [self updateMainDisplaysWithNumber:[self.calculator performOperator:[NIBOperator operatorWithTag:button.tag]] maxDisplayableDigits:maxDigits];
+    NSNumber *number = [self.calculator performOperator:[NIBOperator operatorWithTag:button.tag]];
+    [self updateMainDisplaysWithNumber:number maxDisplayableDigits:maxDigits];
     
     /* result is displayed */
     self.resultDisplayed = YES;
@@ -538,7 +551,8 @@ NS_ASSUME_NONNULL_END
 - (void)performParenthesisOperationCalculation:(NIBButton *)button
 {
     
-    NSString *numStr = [self stringFromString:self.currentCalculatorView.mainDisplay.text withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
+    NSString *numStr = [self stringFromString:self.currentCalculatorView.mainDisplay.text
+                          withRevmovalOptions:NIBSymbolRemovalGroupingSeparator];
     
     /* if button is closing parenthesis */
     if (button.tag == NIBButtonClosingParenthesis) {
@@ -557,7 +571,8 @@ NS_ASSUME_NONNULL_END
     NSUInteger maxDigits = [self digitsOfResultAfterPerfomingOperator:[NIBOperator operatorWithTag:button.tag]];
     
     /* update main display with number from calculation */
-    [self updateMainDisplaysWithNumber:[self.calculator performOperator:[NIBOperator operatorWithTag:button.tag]] maxDisplayableDigits:maxDigits];
+    NSNumber *number = [self.calculator performOperator:[NIBOperator operatorWithTag:button.tag]];
+    [self updateMainDisplaysWithNumber:number maxDisplayableDigits:maxDigits];
 }
 
 - (void)performMemoryOperation:(NIBButton *)button
